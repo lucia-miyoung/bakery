@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/3fb56dfe63.js" crossorigin="anonymous"></script>
+    .
+    <link rel="stylesheet" href="/css/login.css" />
+    <script src="/js/login.js" defer></script>
+</head>
+
+<body>
+    <section class="section-wrapper">
+        <section class="wrapper">
+            <section class="login">
+                <form action="/auth/login" method="post">
+                    <div class="container">
+                        <h2>로그인</h2>
+                        <hr />
+                        <div class="login__form">
+                            <div class="login__id">
+                                <input type="text" class="id" name="id" />
+                                <div class="placeholder">아이디</div>
+                            </div>
+                            <div class="login__password">
+                                <input type="password" class="password" name="password" />
+                                <div class="placeholder">비밀번호</div>
+                            </div>
+                        </div>
+                        <div class="search">
+                            <ul class="search__info">
+                                <li><a href="#" id="search-id">아이디 찾기</a></li>
+                                <li><a href="#" id="search-password">비밀번호 찾기</a></li>
+                                <li><a href="register.html">회원가입</a></li>
+                            </ul>
+                        </div>
+                        <button type="submit" class="login__submit">로그인</button>
+                    </div>
+                </form>
+            </section>
+            <section class="find-id">
+                <div class="container">
+                    <h2>아이디 찾기</h2>
+                    <hr />
+                    <div class="find-id-form">
+                        <div class="find-id__email">
+                            <input type="text" class="email" name="email" />
+                            <div class="placeholder">이메일</div>
+                        </div>
+                        <div class="find-id__name">
+                            <input type="text" class="name" name="name" />
+                            <div class="placeholder">이름</div>
+                        </div>
+                    </div>
+                    <div style="display: flex">
+                        <button class="cancel-button-id" style="margin-right: 7px; background-color: lightgray">
+                            돌아가기
+                        </button>
+                        <button class="find-id-button" type="submit">아이디 찾기</button>
+                    </div>
+                </div>
+            </section>
+            <section class="find-password">
+                <div class="container">
+                    <h2>비밀번호 찾기</h2>
+                    <hr />
+                    <div class="find-pw-form">
+                        <div class="find-pw__id">
+                            <input type="text" class="id" name="id" />
+                            <div class="placeholder">아이디</div>
+                        </div>
+                        <div class="find-pw__email">
+                            <input type="text" class="email" name="email" />
+                            <div class="placeholder">이메일</div>
+                        </div>
+
+                        <div class="find-pw__name">
+                            <input type="text" class="name" name="name" />
+                            <div class="placeholder">이름</div>
+                        </div>
+                    </div>
+                    <div style="display: flex">
+                        <button class="cancel-button-pw" style="margin-right: 7px; background-color: lightgray">
+                            돌아가기
+                        </button>
+                        <button class="find-pw-button" type="submit">
+                            비밀번호 찾기
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </section>
+</body>
+
+</html>

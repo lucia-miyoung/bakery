@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/3fb56dfe63.js" crossorigin="anonymous"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Open+Sans:wght@400;600;700&family=Sansita+Swashed:wght@400;600;700&display=swap"
+        rel="stylesheet" />
+    <!-- font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Sansita Swashed', cursive; -->
+
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/reset.css" />
+    <script src="/js/index.js" defer></script>
+</head>
+
+<body>
+    <section class="notice">
+        <div class="notice__background">
+            <div class="notice__wrapper">
+                <p class="notice__name">Breadly Dessert cafe</p>
+                <hr />
+                <div class="notice__title">
+                    <p>
+                        이번주 EVENT !
+                    </p>
+                    <p>기간: 2020.10.4 ~ 2020.10.10(7일)</p>
+                    <p><img src="/images/sale-tag.png" alt=""></p>
+                </div>
+                <div class="notice__center">
+                    <div>
+                        <img src="/images/cake.png" alt="">
+                        <i class="fas fa-plus" style="font-size: 23px"></i>
+                        <img src="/images/coffeeCup.png" alt="">
+                    </div>
+                    <span><i class="fas fa-quote-left"></i> 케익 & 커피 함께 주문시, <a>총 금액 20% 할인</a></span>
+                </div>
+                <div class="notice__footer">
+                    <label for="notice-check">
+                        <input type="checkbox" id="notice-check">
+                        <i class="fas fa-check-circle"></i>
+                        오늘 하루 보지 않기
+                    </label>
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="header__cover">
+        <a href="#" class="header__center"> 고객센터 </a>
+    </div>
+    <header class="header" id="section">
+        <div class="header__wrapper">
+            <div class="header__title">
+                <i class="fas fa-hand-holding-heart"></i>
+                <span>Breadly</span>
+            </div>
+            <div class="header__search">
+                <ul>
+                    <li>첫번째</li>
+                    <li>두번째</li>
+                    <li>세번째</li>
+                    <li>네번째</li>
+                </ul>
+                <div class="search">
+                    <input type="text" class="search__input" />
+                    <button class="search__button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            <ul class="header__menu">
+                <li class="header__menu__item">
+                    <a href="login.html" class="menu__icon">
+                        <i class="fas fa-user-alt"></i>
+                    </a>
+                    <span class="menu__title">로그인</span>
+                </li>
+                <li class="header__menu__item">
+                    <a href="register.html" class="menu__icon">
+                        <i class="fas fa-file-signature"></i>
+                    </a>
+                    <span class="menu__title">회원가입</span>
+                </li>
+                <li class="header__menu__item">
+                    <a href="cart.html" class="menu__icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                    <span class="menu__title">장바구니</span>
+                </li>
+            </ul>
+        </div>
+        <!-- header__wrapper -->
+    </header>
+    <section class="menubar">
+        <div class="menubar__menu">
+            <ul>
+                <li style="width: 40%">
+                    <button class="all-item__icon" onclick="location.href='bread-list.html'">
+                        <i class="fas fa-stream"></i>
+                    </button>
+                </li>
+                <li class="menubar__items">
+                    <span class="menubar__name">브레드</span>
+                </li>
+                <li class="menubar__items">
+                    <span class="menubar__name">식빵</span>
+                </li>
+                <li class="menubar__items">
+                    <span class="menubar__name">케이크</span>
+                </li>
+                <li class="menubar__items">
+                    <span class="menubar__name">아이스크림</span>
+                </li>
+                <li class="menubar__items">
+                    <span class="menubar__name">마카롱</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="slides__wrapper">
+        <div class="slides__box">
+            <div class="slides__list">
+                <ul class="slides">
+                    <li class="slide">
+                        <img src="/images/bread-2.jpg" alt="" />
+                    </li>
+                    <li class="slide">
+                        <img src="/images/bread-10.jpg" alt="" />
+                    </li>
+                    <li class="slide">
+                        <img src="/images/bread-3.jpg" alt="" />
+                    </li>
+                    <li class="slide">
+                        <img src="/images/bread-4.jpg" alt="" />
+                    </li>
+                    <li class="slide">
+                        <img src="/images/bread-5.jpg" alt="" />
+                    </li>
+                    <li class="slide">
+                        <img src="/images/bread-9.jpg" alt="" />
+                    </li>
+                    <li class="slide">
+                        <img src="/images/bread-1.jpg" alt="" />
+                    </li>
+                </ul>
+            </div>
+            <!-- slides__list -->
+            <div class="slides__button">
+                <button class="prev__button">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="next__button">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            <!-- slides__button -->
+            <div class="slides__page">
+                <ul></ul>
+            </div>
+        </div>
+        <!-- slides__box -->
+    </section>
+    <section class="mid-container">
+        <div class="mid__wrapper">
+            <div class="mid__slides">
+                <ul>
+
+                </ul>
+                <div class="mid__slide__button">
+                    <button class="prev__button">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="next__button">
+                        <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__wrapper">
+            <div class="footer__number">
+                <p>고객센터 080-6664-7779</p>
+                <p>영업시간 평일 09:00 ~ 19:00</p>
+            </div>
+            <hr />
+            <div class="footer__address">
+                <p>서울시 강서구 강서로 279</p>
+            </div>
+            <div class="rights">2020. (주)MIYOUNG. All Rights Reserved</div>
+        </div>
+    </footer>
+</body>
+
+</html>
