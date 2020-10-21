@@ -124,7 +124,7 @@ const midNextBtn = document.querySelector(
 const midSlideRect = 250;
 let moveIndex = 0;
 let slideMargin = 20;
-let midSlideCount = 11;
+let midSlideCount = 15;
 
 /* 판매하는 상품들 진열하는데, 중복되지 않게 나열하기*/
 let randomArray = [];
@@ -205,3 +205,12 @@ function onMoveSlide(number) {
   pager[number - 1].classList.add("active");
 }
 onMoveSlide(1);
+
+
+let setCookie = function(name, value, exp) {
+  let date = new Date();
+  date.setTime(date.getTime() + exp * 24 * 60 * 60 * 1000);
+  document.cookie = name + '=' + value + ';expires=' + date.toUTCString();
+};
+
+setCookie('miyoung', "true", 1);

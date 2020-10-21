@@ -27,7 +27,6 @@ emailInput.addEventListener("change", (e) => {
   const data = e.target.options.selectedIndex;
   const options = document.querySelectorAll("#email-input > option");
   const text = options[data].textContent;
-  //   console.log(text);
   inputEmailDetail(text);
 });
 
@@ -51,7 +50,6 @@ const deleteBtn = document.querySelector(".profile__delete");
 
 inputFile.addEventListener("change", (event) => {
   const text = event.target.files[0];
-  // console.log(text);
   var reader = new FileReader();
   reader.addEventListener(
     "load",
@@ -60,7 +58,6 @@ inputFile.addEventListener("change", (event) => {
     },
     false
   );
-  // console.log(reader.result);
   if (text) {
     reader.readAsDataURL(text);
   }
@@ -75,11 +72,12 @@ deleteBtn.addEventListener("click", () => {
   preview.setAttribute("src", bagicImgPath);
 });
 
+
 /* id 유효성 검사 */
 const id = document.querySelector(".id");
 const idValue = id.value;
 const warningId = document.querySelector(".id-form .warning");
-// /^[a-zA-Z0-9]{4,12}$/; 대문자도 하려면 안에 A-Z 넣어쥬삼
+// /^[a-zA-Z0-9]{4,12}$/; 대문자도 하려면 안에 A-Z 넣어주기
 
 function isValidated(value) {
   const valid = /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{8,16}$/;
@@ -133,6 +131,7 @@ function idValidatedPW() {
   return false;
 }
 
+
 // 휴대폰 유효성 검사
 const phoneInput = document.querySelector(".phone-form .phone");
 const warningPhone = document.querySelector(".phone-form .warning");
@@ -168,6 +167,8 @@ phoneInput.addEventListener("blur", () => {
   phoneInput.value = input;
 });
 
+
+
 // 이메일 유효성 검사
 const inputEmail = document.querySelector(".email-form .email");
 const warningEmail = document.querySelector(".email-form .warning");
@@ -181,11 +182,6 @@ function isValidatedEmail(value) {
     warningEmail.innerHTML = warningHTML(
       "이메일은 영문 소문자와 숫자 조합하여 8~12자리로 입력해주세요."
     );
-    // }
-    // else if (check.test(value)) {
-    //   warningEmail.innerHTML = warningHTML(
-    //     "잘못된 형식입니다. 이메일 계정을 제외하고 입력해주세요."
-    //   );
   } else {
     warningEmail.innerHTML = successHTML();
   }
@@ -261,7 +257,7 @@ function isValidatedAll() {
       isValidatedPhone(phoneInput.value)
     ) {
       alert("회원가입이 완료되었습니다.");
-      location.href = "/login";
+      location.href = "login.html";
     } 
   } else {
     alert("빈칸을 모두 입력해주세요.");
