@@ -60,20 +60,15 @@ function onClickEventProduct(items) {
 
   const searchBtn = document.querySelector('.search__button');
   searchBtn.addEventListener('click',(event) =>{
-    onSearchProduct(event, items);
-    
+        onSearchProduct(event, items);
   });
 
   const searchInput = document.querySelector(".search__input");
-  searchInput.addEventListener('focus', () =>{
+  searchInput.addEventListener('input', () =>{
     const searchPreview = document.querySelector('.search__preview');
     searchPreview.classList.add('open');
   });
-
-  // searchInput.addEventListener('blur', () =>{
-  //   const searchPreview = document.querySelector('.search__preview');
-  //   searchPreview.classList.remove('open');
-  // });
+  
   searchInput.addEventListener('keypress', (event) =>{
     if(event.key ==="Enter") {
       onSearchProduct(event, items);
@@ -109,46 +104,72 @@ function onSearchProduct(event,items) {
     const itemList =document.querySelectorAll('.item__wrap');
     const searchInput = document.querySelector(".search__input");
     const eachWords = searchInput.value.trim();
+    
       itemList.forEach(item => {
         const itemTitle=item.querySelector('.dessert__explain').textContent;
         if(itemTitle.indexOf(eachWords) > -1){
           item.classList.remove('invisible');
-        }else{
+        }
+        else{
           item.classList.add('invisible');
         }
-
        });
-    onDeleteItem(event);
+   
     searchInput.value='';
     searchInput.focus();
 }
 
-let idNum =0;
+const searchInput = document.querySelector('.search__input');
+const searchPreview = document.querySelector('.search__preview');
 const previewInput = document.querySelector('.preview__input');
+let idNum =0;
+let createCnt =0;
 
-function onDeleteItem(event) {
-  const searchInput = document.querySelector(".search__input");
-  if(searchInput.value==='') {
+/* 검색 목록 보여주기 & 삭제하기  */
+function onAddSearchList(input) {
+  if(input.value==='') {
     return;
   }
   previewInput.innerHTML+=
-  `<li data-id="${idNum}"><span>${searchInput.value}</span>
+  `<li class="preview" data-id="${idNum}"><span>${input.value}</span>
   <button class="search__delete"><i class="fas fa-times" data-id="${idNum}"></i></button></li>`;
   idNum++;
-
-  deleted();
+  createCnt++;
 }
-
-function deleted(){
-  previewInput.addEventListener('click', (e) =>{
-    const dataId = e.target.dataset.id;
-    if(dataId) {
-      const dataDeleted = document.querySelector(`.preview__input > li[data-id='${idNum}']`);
-      dataDeleted.remove();
+let deleteCnt=0;
+previewInput.addEventListener('click', (event) =>{
+  const id = event.target.dataset.id;
+    if(event.target.nodeName==='I' && id) {
+      const removedItem = document.querySelector(`.preview[data-id="${id}"]`);
+      removedItem.remove();
+      deleteCnt++;
+        if(deleteCnt===createCnt) {
+          searchPreview.classList.remove('open');
+        }
     }
    
-  });
-}
+});
+
+
+const searchBtn = document.querySelector('.search__button');
+  searchBtn.addEventListener('click',(e) =>{
+    if(searchInput.value ==='') {
+      alert('상품을 입력해주세요.');
+      searchInput.focus();
+      return;
+    }
+    searchInput.focus();
+    searchInput.value="";
+    onAddSearchList(searchInput);
+});
+
+searchInput.addEventListener('keypress', (e) =>{
+  if(e.key==="Enter") {
+    onAddSearchList(searchInput);
+  }
+});
+
+  
 
 
 
