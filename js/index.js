@@ -73,7 +73,8 @@ noticeCloseBtn.addEventListener("click", () => {
     alert("체크박스를 체크해주세요.");
     return;
   }
-  notice.style.display = "none";
+  hideCookie();
+  
 });
 
 // ul자식요소로 슬라이드 갯수만큼 li 생성하기
@@ -142,7 +143,7 @@ function createMidSlides(number) {
   for (let i = 0; i < number; i++) {
     midSlides.innerHTML += `
       <li class="mid__slide">
-         <img src="../images/bread-${randomArray[i]}.jpg" alt="" />
+         <img src="./images/bread-${randomArray[i]}.jpg" alt="" />
       </li>
       `;
   }
@@ -206,11 +207,35 @@ function onMoveSlide(number) {
 }
 onMoveSlide(1);
 
+  let setCookie = function(name, value, time) {
+    let date = new Date();
+    date.setTime(date.getTime() + time * 60 * 60 * 24 * 1000);
+    document.cookie = name + '=' + value + ';expires=' + date.toUTCString();
+  };
+    
 
-let setCookie = function(name, value, exp) {
-  let date = new Date();
-  date.setTime(date.getTime() + exp * 24 * 60 * 60 * 1000);
-  document.cookie = name + '=' + value + ';expires=' + date.toUTCString();
-};
+const user = "hello";  
 
-setCookie('miyoung', "true", 1);
+function hideCookie() {
+  setCookie(user, "123456", 1);
+  notice.style.display="none";
+}
+
+if(document.cookie.indexOf(user) > -1) {
+  notice.style.display="none"; 
+}else {
+  notice.style.display="block";
+
+}
+
+const cartCount = document.querySelector('.cart__count');
+let cartNumbers = localStorage.getItem('cartNumbers');
+cartNumbers=parseInt(cartNumbers);
+if(cartNumbers > 0) {
+  cartCount.textContent=cartNumbers;
+}else {
+  cartCount.textContent=0;
+}
+
+
+

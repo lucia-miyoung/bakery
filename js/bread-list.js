@@ -7,7 +7,7 @@ loadItem().then((products) => {
 });
 
 function loadItem() {
-  return fetch("/data/data.json")
+  return fetch("./data/data.json")
     .then((response) => response.json())
     .then((json) => json.products);
 }

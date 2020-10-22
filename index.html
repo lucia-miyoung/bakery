@@ -43,7 +43,7 @@
                     <label for="notice-check">
                         <input type="checkbox" id="notice-check">
                         <i class="fas fa-check-circle"></i>
-                        오늘 하루 보지 않기
+                        24시간 보지 않기
                     </label>
                     <i class="fas fa-times"></i>
                 </div>
@@ -55,10 +55,10 @@
     </div>
     <header class="header" id="section">
         <div class="header__wrapper">
-            <div class="header__title">
+            <a href="index.html" class="header__title">
                 <i class="fas fa-hand-holding-heart"></i>
                 <span>Breadly</span>
-            </div>
+            </a>
             <div class="header__search">
                 <ul>
                     <li>첫번째</li>
@@ -71,6 +71,11 @@
                     <button class="search__button">
                         <i class="fas fa-search"></i>
                     </button>
+                    <div class="search__preview">
+                        <ul class="preview__input">
+                   
+                        </ul>
+                    </div>
                 </div>
             </div>
             <ul class="header__menu">
@@ -90,7 +95,7 @@
                     <a href="cart.html" class="menu__icon">
                         <i class="fas fa-shopping-cart"></i>
                     </a>
-                    <span class="menu__title">장바구니</span>
+                    <span class="menu__title">장바구니 <span class="cart__count">0</span> </span>
                 </li>
             </ul>
         </div>

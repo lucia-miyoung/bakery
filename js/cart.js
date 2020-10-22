@@ -54,3 +54,11 @@ function displayCart() {
   
   displayCart();
   
+const cartCount = document.querySelector('.cart__count');
+let cartNumbers = localStorage.getItem('cartNumbers');
+cartNumbers=parseInt(cartNumbers);
+if(cartNumbers > 0) {
+  cartCount.textContent=cartNumbers;
+}else {
+  cartCount.textContent=0;
+}
