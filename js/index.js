@@ -239,8 +239,9 @@ if(cartNumbers > 0) {
 
 /* search 기능 */
 const searchBtn = document.querySelector('.search__button');
+const searchInput = document.querySelector('.search__input');
+
 searchBtn.addEventListener('click', () =>{
-  const searchInput = document.querySelector('.search__input');
   if(searchInput.value === "") {
     alert('검색어를 입력해주세요');
   }else {
@@ -249,3 +250,13 @@ searchBtn.addEventListener('click', () =>{
 })
 
 
+searchInput.addEventListener('keypress', (e) =>{
+  if(e.key==="Enter") {
+    if(searchInput.value === "") {
+      alert('검색어를 입력해주세요');
+    }else {
+      location.href="bread-list.html";
+    }
+  }
+  
+})

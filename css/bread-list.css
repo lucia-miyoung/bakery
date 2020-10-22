@@ -314,3 +314,11 @@
   border: 1px solid var(--color-light-gray);
   font-weight: var(--weight-semi-bold);
 }
+
+.message {
+  display: none;
+}
+
+.message.visible {
+  display: block;
+}

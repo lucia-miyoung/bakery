@@ -314,7 +314,7 @@ a {
   border-right: 1px solid var(--color-cream);
 }
 
-.menubar__menu > ul > li:hover .fa-stream {
+.menubar__menu > ul > li > label:hover .fa-stream {
   color: var(--color-white);
 }
 

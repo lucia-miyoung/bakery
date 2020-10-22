@@ -104,7 +104,7 @@ function onSearchProduct(event,items) {
     const itemList =document.querySelectorAll('.item__wrap');
     const searchInput = document.querySelector(".search__input");
     const eachWords = searchInput.value.trim();
-    
+    const breadItem = document.querySelector('.bread__item');
       itemList.forEach(item => {
         const itemTitle=item.querySelector('.dessert__explain').textContent;
         if(itemTitle.indexOf(eachWords) > -1){
@@ -114,16 +114,18 @@ function onSearchProduct(event,items) {
           item.classList.add('invisible');
         }
        });
-   
+     
     searchInput.value='';
     searchInput.focus();
 }
+
 
 const searchInput = document.querySelector('.search__input');
 const searchPreview = document.querySelector('.search__preview');
 const previewInput = document.querySelector('.preview__input');
 let idNum =0;
 let createCnt =0;
+
 
 /* 검색 목록 보여주기 & 삭제하기  */
 function onAddSearchList(input) {
@@ -143,7 +145,7 @@ previewInput.addEventListener('click', (event) =>{
       const removedItem = document.querySelector(`.preview[data-id="${id}"]`);
       removedItem.remove();
       deleteCnt++;
-        if(deleteCnt===createCnt) {
+        if(deleteCnt === createCnt) {
           searchPreview.classList.remove('open');
         }
     }
@@ -168,8 +170,6 @@ searchInput.addEventListener('keypress', (e) =>{
     onAddSearchList(searchInput);
   }
 });
-
-  
 
 
 
