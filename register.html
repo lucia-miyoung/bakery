@@ -6,19 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://kit.fontawesome.com/3fb56dfe63.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/css/register.css" />
-    <link rel="stylesheet" href="/css/reset.css" />
-    <script src="/js/register.js" defer></script>
+    <link rel="stylesheet" href="./css/register.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <script src="./js/register.js" defer></script>
 </head>
 
 <body>
+    <div class="basic-header">
+        <button onclick="history.back();"><i class="fas fa-arrow-left"></i></button>
+    </div>
     <section class="signup">
         <div class="signup-title">
             <h2>회원가입</h2>
-            <!-- <hr /> -->
         </div>
         <div class="profile">
-            <img src="/images/user.png" />
+            <img src="./images/user.png" />
 
             <label for="profile__insert">
                 <i class="fas fa-camera"></i>
@@ -109,7 +111,6 @@
                                 const addressDetail = document.querySelector(
                                     ".address__detail"
                                 );
-                                // console.log(data);
                                 zipCode.value = data.zonecode;
                                 address.value = data.address;
                                 addressDetail.focus();
