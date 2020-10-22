@@ -65,10 +65,15 @@ function onClickEventProduct(items) {
   });
 
   const searchInput = document.querySelector(".search__input");
-  searchInput.addEventListener('input', () =>{
+  searchInput.addEventListener('focus', () =>{
     const searchPreview = document.querySelector('.search__preview');
     searchPreview.classList.add('open');
   });
+
+  // searchInput.addEventListener('blur', () =>{
+  //   const searchPreview = document.querySelector('.search__preview');
+  //   searchPreview.classList.remove('open');
+  // });
   searchInput.addEventListener('keypress', (event) =>{
     if(event.key ==="Enter") {
       onSearchProduct(event, items);
@@ -100,26 +105,20 @@ function onButtonItems(event, value) {
   });
 }
 
-
-
 function onSearchProduct(event,items) {
     const itemList =document.querySelectorAll('.item__wrap');
     const searchInput = document.querySelector(".search__input");
     const eachWords = searchInput.value.trim();
-    breadItem.classList.remove("animation");
       itemList.forEach(item => {
-      breadItem.classList.add("animation");
-
         const itemTitle=item.querySelector('.dessert__explain').textContent;
-        if(itemTitle.indexOf(eachWords)>-1){
+        if(itemTitle.indexOf(eachWords) > -1){
           item.classList.remove('invisible');
         }else{
           item.classList.add('invisible');
         }
 
        });
-    breadItem.classList.remove("animation");
-    onDeleteItem();
+    onDeleteItem(event);
     searchInput.value='';
     searchInput.focus();
 }
@@ -127,23 +126,30 @@ function onSearchProduct(event,items) {
 let idNum =0;
 const previewInput = document.querySelector('.preview__input');
 
-function onDeleteItem() {
+function onDeleteItem(event) {
   const searchInput = document.querySelector(".search__input");
+  if(searchInput.value==='') {
+    return;
+  }
   previewInput.innerHTML+=
   `<li data-id="${idNum}"><span>${searchInput.value}</span>
   <button class="search__delete"><i class="fas fa-times" data-id="${idNum}"></i></button></li>`;
   idNum++;
 
+  deleted();
 }
 
-previewInput.addEventListener('click', (e) =>{
-  const dataId = e.target.dataset.id;
-  if(dataId) {
-    const dataDeleted = document.querySelector(`.preview__input > li[data-id='${idNum}']`);
-    dataDeleted.remove();
-  }
- 
-});
+function deleted(){
+  previewInput.addEventListener('click', (e) =>{
+    const dataId = e.target.dataset.id;
+    if(dataId) {
+      const dataDeleted = document.querySelector(`.preview__input > li[data-id='${idNum}']`);
+      dataDeleted.remove();
+    }
+   
+  });
+}
+
 
 
 
@@ -191,12 +197,14 @@ function setItems(item) {
 
     //같은값 누르면 그 속성에 1개씩 올라가기
     if(cartItems !==null) {
-        if(cartItems = {
+      item.inCart=parseInt(item.inCart); 
+      if(cartItems = {
             ...cartItems,
             [item.name] : item
         })
         cartItems[item.name].inCart += 1;
     }else {
+       item.inCart=parseInt(item.inCart);
         item.inCart =1;
         cartItems = {
             [item.name] : item
@@ -220,13 +228,10 @@ function totalCost(item){
      localStorage.setItem('totalCost', itemPrice);
 
     }
-    
-
+  
 }
 
 onLoadCartNumbers();
-
-
 
 /*
 function onChangeQuantity(e) {

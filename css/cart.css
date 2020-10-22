@@ -37,6 +37,11 @@
   --border-radius-normal: 4px;
 }
 
+#section {
+  max-width: 1280px;
+  margin: auto;
+}
+
 .cart {
   margin-top: 20px;
   /* border: 1px solid red; */

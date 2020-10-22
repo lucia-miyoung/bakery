@@ -104,9 +104,9 @@ function onStopTimer() {
   clearInterval(autoTimer);
 }
 
+/* 메뉴바  */
 const menubarMenu = document.querySelector(".menubar__menu");
 const menubarMenuRect = menubarMenu.getBoundingClientRect();
-
 document.addEventListener("scroll", () => {
   if (window.scrollY > menubarMenuRect.top) {
     menubarMenu.classList.add("active");
@@ -151,13 +151,12 @@ function createMidSlides(number) {
 
 createMidSlides(midSlideCount);
 
-
-
 function onModeMidSlide(num) {
   midSlides.style.transform = "translateX(" + -1 * num * midWidth + "px)";
   moveIndex = num;
 }
-/* 이전, 다음버튼 누르면 옆으로 이동 (자동슬라이드X) */
+
+/* 이전, 다음버튼 누르면 옆으로 이동 (자동슬라이드 X) */
 const midWidth = midSlideRect + slideMargin;
 const midSlidesSize = midSlideCount * midWidth;
 midSlides.style.width = midSlidesSize + "px";
@@ -225,17 +224,28 @@ if(document.cookie.indexOf(user) > -1) {
   notice.style.display="none"; 
 }else {
   notice.style.display="block";
-
 }
 
 const cartCount = document.querySelector('.cart__count');
 let cartNumbers = localStorage.getItem('cartNumbers');
 cartNumbers=parseInt(cartNumbers);
+
 if(cartNumbers > 0) {
   cartCount.textContent=cartNumbers;
 }else {
-  cartCount.textContent=0;
+  cartCount.textContent = 0;
 }
 
+
+/* search 기능 */
+const searchBtn = document.querySelector('.search__button');
+searchBtn.addEventListener('click', () =>{
+  const searchInput = document.querySelector('.search__input');
+  if(searchInput.value === "") {
+    alert('검색어를 입력해주세요');
+  }else {
+    location.href="bread-list.html";
+  }
+})
 
 

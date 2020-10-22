@@ -37,6 +37,11 @@
   --border-radius-normal: 4px;
 }
 
+#section {
+  max-width: 1280px;
+  margin: auto;
+}
+
 /* dessert */
 .dessert-section {
   background-color: var(--color-cream);
