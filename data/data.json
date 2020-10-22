@@ -4,119 +4,119 @@
       "type": "sweet",
       "name": "달콤소라빵",
       "price": "1,700원",
-      "image": "/images/bread-1.jpg",
+      "image": "./images/bread-1.jpg",
       "inCart":0
     },
     {
       "type": "normal",
       "name": "후레쉬크림샌드빵",
       "price": "3,800원",
-      "image": "/images/bread-4.jpg",
+      "image": "./images/bread-4.jpg",
       "inCart":0
     },
     {
       "type": "normal",
       "name": "바게트",
       "price": "3,000원",
-      "image": "/images/bread-2.jpg",
+      "image": "./images/bread-2.jpg",
       "inCart":0
     },
     {
       "type": "sweet",
       "name": "고로케",
       "price": "1,700원",
-      "image": "/images/bread-3.jpg",
+      "image": "./images/bread-3.jpg",
       "inCart":0
     },
     {
       "type": "normal",
       "name": "식빵",
       "price": "2,400원",
-      "image": "/images/bread-4.jpg",
+      "image": "./images/bread-4.jpg",
       "inCart":0
     },
     {
       "type": "sweet",
       "name": "모카번",
       "price": "2,500원",
-      "image": "/images/bread-5.jpg",
+      "image": "./images/bread-5.jpg",
       "inCart":0
     },
     {
       "type": "sweet",
       "name": "크로와상",
       "price": "3,400원",
-      "image": "/images/bread-1.jpg",
+      "image": "./images/bread-1.jpg",
       "inCart":0
     },
     {
       "type": "sweet",
       "name": "단팥앙금빵",
       "price": "2,800원",
-      "image": "/images/bread-6.jpg",
+      "image": "./images/bread-6.jpg",
       "inCart":0
     },
     {
       "type": "sandwich",
       "name": "샌드위치",
       "price": "3,200원",
-      "image": "/images/bread-7.jpg",
+      "image": "./images/bread-7.jpg",
       "inCart":0
     },
     {
       "type": "sweet",
       "name": "소세지빵",
       "price": "2,100원",
-      "image": "/images/bread-8.jpg",
+      "image": "./images/bread-8.jpg",
       "inCart":0
     },
     {
       "type": "cake",
       "name": "브라우니",
       "price": "4,500원",
-      "image": "/images/bread-9.jpg",
+      "image": "./images/bread-9.jpg",
       "inCart":0
     },
     {
       "type": "cake",
       "name": "레드벨벳 조각케이크",
       "price": "5,800원",
-      "image": "/images/bread-10.jpg",
+      "image": "./images/bread-10.jpg",
       "inCart":0
     },
     {
       "type": "cake",
       "name": "진한초코케이크",
       "price": "32,000",
-      "image": "/images/bread-11.jpg",
+      "image": "./images/bread-11.jpg",
       "inCart":0
     },
     {
       "type": "sweet",
       "name": "딸기크레페",
       "price": "4,100원",
-      "image": "/images/bread-12.jpg",
+      "image": "./images/bread-12.jpg",
       "inCart":0
     },
     {
       "type": "cake",
       "name": "아이스크림",
       "price": "3,700원",
-      "image": "/images/bread-13.jpg",
+      "image": "./images/bread-13.jpg",
       "inCart":0
     },
     {
       "type": "cake",
       "name": "모둠 아이스크림",
       "price": "11,500원",
-      "image": "/images/bread-14.jpg",
+      "image": "./images/bread-14.jpg",
       "inCart":0
     },
     {
       "type": "normal",
       "name": "모카크림브레드",
       "price": "6,700원",
-      "image": "/images/bread-15.jpg",
+      "image": "./images/bread-15.jpg",
       "inCart":0
     }
   ]
