@@ -1,5 +1,6 @@
 "use strict";
 
+/*JSON 파일 불러오기 */
 loadItem().then((products) => {
   showProducts(products);
   onClickEventProduct(products);
@@ -13,6 +14,7 @@ function loadItem() {
 }
 
 
+/* JSON에서 불러온 아이템 생성 */
 function makeProduct(items) {
   return `<li class="item__wrap" data-type ="${items.type}">
     <a href="#" class="item">
@@ -31,6 +33,7 @@ function makeProduct(items) {
 </li>`;
 }
 
+/* 장바구니담기 클릭시 뜨는 알림창  */
 function onShowMessageCart(items) {
     const breadItem = document.querySelector('.bread__item');
         breadItem.addEventListener('click', (e) =>{
@@ -40,7 +43,7 @@ function onShowMessageCart(items) {
     });
 }
 
-
+/* 빵목록 불러오기 */
 const breadItem = document.querySelector(".bread__item");
 function showProducts(items) {
   breadItem.innerHTML = items.map((item) => makeProduct(item)).join("");
@@ -49,6 +52,7 @@ function showProducts(items) {
 }
 
 const choiceBtn = document.querySelector(".dessert__choice__list");
+
 
 function onClickEventProduct(items) {
   choiceBtn.addEventListener("click", (event) => {
@@ -213,8 +217,7 @@ function cartNumbers(item) {
 }
 function setItems(item) {
     let cartItems = localStorage.getItem('itemsInCart');
-    cartItems = JSON.parse(cartItems); //json을 자바스크립트로 변환
-    // console.log('My cartItems are' , cartItems);
+    cartItems = JSON.parse(cartItems); 
 
     //같은값 누르면 그 속성에 1개씩 올라가기
     if(cartItems !==null) {
@@ -231,10 +234,8 @@ function setItems(item) {
             [item.name] : item
         }
     }
-  
 
     localStorage.setItem("itemsInCart", JSON.stringify(cartItems));
-    //stringify : 자바스트립트 값이나 객체를 json 문자열로 변환.
 }
 
 function totalCost(item){
@@ -253,18 +254,3 @@ function totalCost(item){
 }
 
 onLoadCartNumbers();
-
-/*
-function onChangeQuantity(e) {
-  let cartItems = localStorage.getItem('itemsInCart');
-  cartItems = JSON.parse(cartItems);
-  let quantityContainer = document.querySelector('.product__quantity span');
-  if(e.target.classList[2]==="down") {
-    quantityContainer.textContent =
-    `
-    ${cartItems.inCart-1}
-    `;
-
-  }
-}
-*/
