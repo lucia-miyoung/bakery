@@ -218,7 +218,7 @@ function cartNumbers(item) {
 function setItems(item) {
     let cartItems = localStorage.getItem('itemsInCart');
     cartItems = JSON.parse(cartItems); 
-
+  console.log(cartItems);
     //같은값 누르면 그 속성에 1개씩 올라가기
     if(cartItems !==null) {
       item.inCart=parseInt(item.inCart); 
@@ -234,7 +234,6 @@ function setItems(item) {
             [item.name] : item
         }
     }
-
     localStorage.setItem("itemsInCart", JSON.stringify(cartItems));
 }
 
