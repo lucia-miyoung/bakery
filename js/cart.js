@@ -1,19 +1,23 @@
 'use strict';
 
+let deleteNum = 0;
+
 /* cart page js */
 function displayCart() {
+  
     let cartItems = localStorage.getItem('itemsInCart');
     cartItems = JSON.parse(cartItems);
     let productContainer = document.querySelector('.products__wrapper');
     let cartCost = localStorage.getItem('totalCost');
-    
+
+
     if(cartItems && productContainer) {
         productContainer.innerHTML='';
         Object.values(cartItems).map(item => {
       let itemPrice = item.price.replace(/,/g,'').replace(/원/g, '');
             productContainer.innerHTML +=
             `
-            <li class="product">
+            <li class="product" data-id="${deleteNum}">
             <div class="product__image">
                 <img src="${item.image}" alt="">
                 <span>${item.name}</span>
@@ -24,10 +28,12 @@ function displayCart() {
                 <span>${item.inCart}</span> 
             <i class="fas fa-arrow-alt-circle-right up" data-name="${item.name}"></i></span>
             <span class="product__total">${item.inCart * itemPrice}원</span>
-            <button type="button" class="product__delete"> <i class="fas fa-times"></i>
+            <button type="button" class="product__delete"> <i class="fas fa-times" data-id="${deleteNum}"></i>
             </button>  
         </li>
             `;
+            deleteNum++;
+            
         });
         productContainer.innerHTML += 
         `
@@ -44,9 +50,13 @@ function displayCart() {
       </div>
       `;
     }
+
   }
   displayCart();
- 
+
+  
+
+
   
 const cartCount = document.querySelector('.cart__count');
 let cartNumbers = localStorage.getItem('cartNumbers');
@@ -80,7 +90,7 @@ function onChangeItemCount(event, index) {
   const allTotal = document.querySelector('.all__total');
   cartCount.textContent=cartNumbers;
   let item = eachItems[index];
-  console.log(item);
+  // console.log(item);
     let itemPrice = item.price.replace(/,/g,'').replace(/원/g, '');
     item.inCart = parseInt(item.inCart);
     itemPrice=parseInt(itemPrice);
@@ -130,4 +140,16 @@ function onChangeItemCount(event, index) {
     localStorage.setItem('itemsInCart', JSON.stringify(eachItems));
     localStorage.setItem('totalCost', cartCost);
     localStorage.setItem('cartNumbers', productNumbers);
-}
+  }
+
+  const itemDelete = document.querySelector('.products__wrapper');
+  itemDelete.addEventListener('click', (e) =>{
+    if(e.target.classList[1]==='fa-times') {
+      const deletedItem = e.target.parentNode.parentNode;
+        deletedItem.remove();
+      let deleteStorage = localStorage.getItem('itemsInCart');
+      deleteStorage = JSON.parse(deleteStorage);
+  
+    }
+  });
+
